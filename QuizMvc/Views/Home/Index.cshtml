@@ -1,0 +1,20 @@
+﻿@model IEnumerable<QuizMvc.QuizApi.Models.Quiz>
+@{
+    ViewData["Title"] = "Quiz Home Page";
+}
+
+<h2>Welcome to our Quizzes!</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        @foreach (var quiz in Model)
+        {
+            <ul>
+                <li class="glyphicon glyphicon-play-circle"> <a asp-area="" asp-controller="Home" asp-action="Quiz" asp-route-id="@quiz.Id">@quiz.Name</a></li>
+            </ul>
+        }
+
+    </div>
+    <div class="col-md-4">Please select a quiz on your left. Good luck!</div>
+</div>
+
